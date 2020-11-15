@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "199717548497",
+    "firebase_url": "https://messenger-cf515.firebaseio.com",
+    "project_id": "messenger-cf515",
+    "storage_bucket": "messenger-cf515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199717548497:android:8d006ef84ab8138a0530f0",
+        "android_client_info": {
+          "package_name": "com.santiaprende.kotlinmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199717548497-fg4vmpr2o9ejkj3l8l4smons79p1nboa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOSvbghYyxByH8IHq7bjjWuq0vHwKXGfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199717548497-fg4vmpr2o9ejkj3l8l4smons79p1nboa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
