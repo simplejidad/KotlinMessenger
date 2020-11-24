@@ -1,5 +1,6 @@
-package com.santiaprende.kotlinmessenger
+package com.santiaprende.kotlinmessenger.messages
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -7,9 +8,10 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.santiaprende.kotlinmessenger.R
 import com.santiaprende.kotlinmessenger.databinding.ActivityNewMessageBinding
+import com.santiaprende.kotlinmessenger.models.User
 import com.squareup.picasso.Picasso
-import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
 
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
@@ -20,6 +22,10 @@ import kotlinx.android.synthetic.main.user_row_new_message.view.*
 class NewMessageActivity : AppCompatActivity() {
 
   private lateinit var binding: ActivityNewMessageBinding
+
+  companion object{
+    val USER_KEY = "USER_KEY"
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -46,6 +52,14 @@ class NewMessageActivity : AppCompatActivity() {
 
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerview_new_message)
         recyclerView.adapter = adapter
+
+        adapter.setOnItemClickListener { item, view ->
+          val intent = Intent(view.context, ChatLogActivity::class.java)
+          val userItem = item as UserItem
+          intent.putExtra(USER_KEY, userItem.user)
+          startActivity(intent)
+          finish()
+        }
       }
 
       override fun onCancelled(error: DatabaseError) {

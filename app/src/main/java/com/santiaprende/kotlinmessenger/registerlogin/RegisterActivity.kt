@@ -1,8 +1,7 @@
-package com.santiaprende.kotlinmessenger
+package com.santiaprende.kotlinmessenger.registerlogin
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,7 +13,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.santiaprende.kotlinmessenger.messages.LatestMessagesActivity
+import com.santiaprende.kotlinmessenger.R
 import com.santiaprende.kotlinmessenger.databinding.ActivityRegisterBinding
+import com.santiaprende.kotlinmessenger.models.User
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -133,6 +135,3 @@ class RegisterActivity : AppCompatActivity() {
   }
 }
 
-class User(val uid: String, val username: String, val profileImageUrl: String) {
-  constructor() : this("","","")
-}
